@@ -4,10 +4,10 @@
 permalink:           pretty
 
 # Setup
-title:               Lanyon
-tagline:             'A Jekyll theme'
-description:         'A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:                 http://lanyon.getpoole.com
+title:               askkaz
+tagline:             'A place for my musings'
+description:         'I decided I needed somewhere to practice writing and talk about my transition from aerospace to software development'
+url:                 http://askkaz.com
 baseurl:             ''
 paginate:            5
 paginate_path:       "page:num"
@@ -15,9 +15,9 @@ gems:                ['jekyll-paginate']
 
 # About/contact
 author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  name:              Adam Kaczmarek
+  url:               https://twitter.com/askkaz
+  email:             me@askkaz.com
 
 # Custom vars
 version:             1.0.0
