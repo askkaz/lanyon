@@ -41,5 +41,3 @@ validation-report.json
 node_modules
 bower_components
 
-# Packaged app
-app.tar.gz
