@@ -6,7 +6,7 @@ permalink:           pretty
 # Setup
 title:               askkaz
 tagline:             'A place for my musings'
-description:         'I decided I needed somewhere to practice writing and talk about my transition from aerospace to software development'
+description:         'Somewhere to practice writing and talk about my transition from aerospace to software development'
 url:                 http://askkaz.com
 baseurl:             ''
 paginate:            5
@@ -16,7 +16,7 @@ gems:                ['jekyll-paginate']
 # About/contact
 author:
   name:              Adam Kaczmarek
-  url:               https://twitter.com/askkaz
+  url:               https://twitter.com/adamkaz
   email:             me@askkaz.com
 
 # Custom vars

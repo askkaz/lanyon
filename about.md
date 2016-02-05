@@ -1,30 +1,17 @@
 ---
 layout: page
-title: About
+title: About Me
 ---
 
 <p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
+  I've never done anything like this....
 </p>
 
-In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
+After college, I spent 10 years in the aerospace and defense industry. This included designing satellite subsystems, managing sensor developments, and trying to make sure everything worked well together. While I seemed to excel at all of this, I realized that I wanted to be spending more time working with software.
 
-There are currently two themes built on Poole:
+With a full time job and a young child, there was limited time left each day for after hours learning and experimentation. With my family's support, I decided to make the jump to a commercial job in software development. Now I get to play with software all day. I haven't looked back.
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
+At work, I use brightscript to write our Roku app. I also use PHP/Laravel to implement the back end functions the app relies on.
 
-Learn more and contribute on [GitHub](https://github.com/poole).
+As a newcomer to this, right now I'm focusing becoming familiar with a number of different web technologies, before diving in deep with any particular one. With this blog, I plan to write about my cross-cutting learning experiences.
 
-## Setup
-
-Some fun facts about the setup of this project include:
-
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
-
-Thanks for reading!
