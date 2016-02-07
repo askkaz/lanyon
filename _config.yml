@@ -21,3 +21,8 @@ author:
 
 # Custom vars
 version:             1.0.0
+markdown:            redcarpet
+redcarpet:   
+  extensions: ["strikethrough"] 
+github:
+  repo: https://github.com/askkaz/lanyon          
