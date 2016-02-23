@@ -17,8 +17,8 @@ It took me a little bit to realize I just needed `sudo`. D'oh.
 ```
 deployer@askkaz:~$ sudo docker ps
 [sudo] password for deployer:
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                         NAMES
-66944bb2c7d6        webapp              "/sbin/my_init"     2 weeks ago         Up 2 weeks
+CONTAINER ID  IMAGE   COMMAND          CREATED      STATUS
+66944bb2c7d6  webapp  "/sbin/my_init"  2 weeks ago  Up 2 weeks
 ```
 
 This was a great place to use the new trick that I learned from [Learn Enough Command Line to Be Dangerous](http://www.learnenough.com/command-line-tutorial):
@@ -28,8 +28,8 @@ deployer@askkaz:~$ docker ps
 Cannot connect to the Docker daemon. Is the docker daemon running on this host?
 deployer@askkaz:~$ <b>sudo !!</b>
 sudo docker ps
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                         NAMES
-66944bb2c7d6        webapp              "/sbin/my_init"     2 weeks ago         Up 2 weeks
+CONTAINER ID  IMAGE   COMMAND          CREATED      STATUS
+66944bb2c7d6  webapp  "/sbin/my_init"  2 weeks ago  Up 2 weeks
 </pre>
 
 One thing I wish that Josh had written more about is the day-to-day usage - the process to add posts, etc. I find myself doing a lot of steps to publish every post:
