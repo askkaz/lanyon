@@ -3,16 +3,16 @@ layout: post
 title: How I Built This
 ---
 
-I've recently seen a decent amount of posts generally in the theme of "Why you shouldn't use Medium to blog". I also like learning new frameworks and tools, so I took a look around to find some good alternatives to Medium. The option I decided to go with was a Jekyll site hosted on a DigitalOcean droplet. I more or less followed Josh Habdas' writeup [here](http://habd.as/simple-websites-jekyll-docker/). There were a couple small issues with the newer version of jekyll. I also wasted some time thinking that docker wasn't working.
+I've recently seen a decent amount of posts generally in the theme of "Why you shouldn't use Medium to blog". I also like learning new frameworks and tools, so I took a look around to find some good alternatives to Medium. The option I decided to go with was a Jekyll site hosted on a DigitalOcean droplet. I more or less followed Josh Habdas' writeup [here](http://habd.as/simple-websites-jekyll-docker/). There were a couple small issues with the newer version of Jekyll. I also wasted some time thinking that docker wasn't working.
 
-When you do anything with Docker without `sudo`, it looks like Docker isn't working:
+In my DigitalOcean droplet set up, Docker commands issued without `sudo` result in messages leading the user to believe Docker isn't running:
 
 ```
 deployer@askkaz:~$ docker ps
 Cannot connect to the Docker daemon. Is the docker daemon running on this host?
 ```
 
-It took me a little bit to realize I just needed `sudo`.
+It took me a little bit to realize I just needed `sudo`. D'oh.
 
 ```
 deployer@askkaz:~$ sudo docker ps
@@ -32,46 +32,43 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 66944bb2c7d6        webapp              "/sbin/my_init"     2 weeks ago         Up 2 weeks
 </pre>
 
-One thing I wish that he had written more about is the day-to-day usage - the process to add posts, etc. I'm finding myself doing a lot of steps to publish every post:
-1. Write post (obvs)
-2. zip my local repository
-
-```
+One thing I wish that Josh had written more about is the day-to-day usage - the process to add posts, etc. I find myself doing a lot of steps to publish every post:
+<ol>
+<li>Write post (obvs)</li>
+<li>zip my local repository
+<pre>
 git archive -o app.tar.gz --prefix=app/ master
-```
-
-3. SCP the file to my droplet
-
-```
+</pre>
+</li>
+<li>SCP the file to my droplet
+<pre>
 scp app.tar.gz deployer@HOST:
-```
-
-4. SSH into the droplet and expand the repository
-
-```
+</pre>
+</li>
+<li>SSH into the droplet and expand the repository
+<pre>
 ssh deployer@HOST
 tar zxvf app.tar.gz
-```
-
-5. Build a docker image with the new files
-
-```
+</pre>
+</li>
+<li>Build a docker image with the new files
+<pre>
 sudo docker build -t webapp app/
-```
-
-6. Stop the currently running docker image and start it using the new docker image (results in momentary downtime - not optimal, but I think I'm the only one reading this site for now)
-
-```
+</pre>
+</li>
+<li>Stop the currently running docker image and start it using the new docker image (results in momentary downtime - not optimal, but I think I'm the only one reading this site for now)
+<pre>
 sudo docker stop $(docker ps -lq)
 sudo docker run -d -p 80:80 webapp
-```
-
-7. Cleanup unused docker images and containers
-
-```
-sudo docker ps --no-trunc -aqf "status=exited" | xargs docker rm
-sudo docker images --no-trunc -aqf "dangling=true" | xargs docker rmi
-```
+</pre>
+</li>
+<li>Cleanup unused docker images and containers
+<pre>
+sudo docker ps -q -a | xargs sudo docker rm
+sudo docker images --no-trunc -aqf "dangling=true" | xargs sudo docker rmi
+</pre>
+</li>
+</ol>
 
 I'm assuming that I might be doing something wrong, but I haven't found a better solution to this yet.
 
